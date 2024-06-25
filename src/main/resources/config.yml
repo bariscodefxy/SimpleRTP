@@ -1,0 +1,22 @@
+# SimpleRTP
+
+Chat Prefix: '&3[&eSimpleRTP&3]&r '
+
+Overworld: true
+End: false
+
+# If set to 0, it will use the world border as the range
+RTP Range: 5000
+
+Teleporting Title: '&eTeleporting'
+# 3... 2... 1...
+Teleporting Counter Color: '&6'
+# Subtitle of Teleport Successful Title
+Teleport Successful Subtitle: '&2Successfully teleported'
+# %s is the location the player was teleported too!
+Teleport Successful Message: |-
+  &aTeleportation was successful!
+  &6 %s
+
+# In seconds
+Cooldown: 60

@@ -1,0 +1,11 @@
+name: SimpleRTP
+version: '${project.version}'
+main: dev.bariscodefx.simplertp.SimpleRTP
+api-version: '1.17'
+commands:
+  rtp:
+    description: Random TP
+    usage: /<command>
+  rtpReload:
+    description: reloads the config.yml
+    usage: /<command>
