@@ -1,5 +1,5 @@
 # SimpleRTP ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
-Easy configurable Random Teleport plugin for Spigot.  <br>
+Easy to customize Random Teleport plugin for Spigot.  <br>
 I tested this on 1.17.1. <br>
 This project is a fork of [DumbDerg/SimpleRTP](https://github.com/DumbDerg/SimpleRTP).
 <h3>Command:</h3>
