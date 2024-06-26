@@ -23,6 +23,7 @@ jobs:
 
   release:
     name: "Upload releases"
+    permissions: write-all
     runs-on: ubuntu-latest
     needs: [build]
     if: ${{ github.event_name == 'push' }}
