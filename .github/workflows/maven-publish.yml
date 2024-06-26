@@ -41,5 +41,5 @@ jobs:
         tag_name: ${{ github.ref_name == 'master' && 'continuous' || format('continuous-{0}', github.ref_name) }}
         prerelease: true
         token: ${{ secrets.GITHUB_TOKEN }}
-        files: target/*.jar
+        files: target/SimpleRTP-1.0.0-shaded.jar
         draft: false
