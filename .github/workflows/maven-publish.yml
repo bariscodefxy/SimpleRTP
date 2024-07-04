@@ -1,0 +1,39 @@
+name: Maven Build
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build_and_release:
+    name: "Build & upload releases"
+    permissions: write-all
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'zulu'
+    
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
+    
+    - name: Remove old one
+      uses: dev-drprasad/delete-tag-and-release@v1.1
+      with:
+        tag_name: ${{ github.ref_name == 'master' && 'continuous' || format('continuous-{0}', github.ref_name) }}
+        delete_release: true
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Upload new release
+      uses: softprops/action-gh-release@v2
+      with:
+        name: Continuous ${{ github.ref_name }} Build
+        tag_name: ${{ github.ref_name == 'master' && 'continuous' || format('continuous-{0}', github.ref_name) }}
+        prerelease: true
+        token: ${{ secrets.GITHUB_TOKEN }}
+        files: target/SimpleRTP-*.jar
+        draft: false
