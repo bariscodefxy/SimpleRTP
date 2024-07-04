@@ -33,7 +33,7 @@ jobs:
       with:
         name: Continuous ${{ github.ref_name }} Build
         tag_name: ${{ github.ref_name == 'master' && 'continuous' || format('continuous-{0}', github.ref_name) }}
-        prerelease: true
+        prerelease: false
         token: ${{ secrets.GITHUB_TOKEN }}
         files: target/SimpleRTP-*.jar
         draft: false
